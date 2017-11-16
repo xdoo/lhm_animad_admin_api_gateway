@@ -31,10 +31,14 @@ eureka.client:
 # zuul routes
 zuul:
   ignoredServices: '*'
+#  ignoreSecurityHeaders: false
+#  ignoredHeaders: 
   routes:
     foos:
       path: /user_service/**
-      url: http://localhost:35197/
+      url: http://localhost:8870/
+      sensitiveHeaders: 
+      add-proxy-headers: true
 #    tierverwaltung:
 #      path: /tierverwaltung/**
 #      serviceId: Tierverwaltung
@@ -50,7 +54,9 @@ security:
       accessTokenUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
       userAuthorizationUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
     resource:
-       userInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo         
+       userInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo      
+       preferTokenInfo: false  
+  sessions: ALWAYS
        
        
 logging:
