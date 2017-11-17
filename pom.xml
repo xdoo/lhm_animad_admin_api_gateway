@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.muenchen.referenzarchitektur</groupId>
-    <artifactId>api-gateway</artifactId>
+    <artifactId>animad_admin_api_gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>lhm-api-gateway</name>
+    <name>animad_admin_api_gateway</name>
     <description>Demo project for Spring Boot</description>
     
     <parent>
@@ -39,7 +39,7 @@
 
         <dependency>
             <groupId>de.muenchen.referenzarchitektur</groupId>
-            <artifactId>lhm_polymer</artifactId>
+            <artifactId>lhm_animad_admin_html5</artifactId>
             <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>   
