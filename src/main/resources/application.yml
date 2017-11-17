@@ -7,7 +7,7 @@ spring:
     profiles.active: local
     application.name: Zuul
 
-# zuul proxy always exposes 8080 
+# zuul proxy exposes 8082
 server.port: 8082
 
 
@@ -16,17 +16,6 @@ server.port: 8082
 spring:
     profiles: local
       
-      
-eureka.client:
-    # in local mode you have to run your service 
-    # discovery on localhost (you also can run the 
-    # cloud infrastructure on your local docker host)
-    serviceUrl.defaultZone: http://localhost:8761/eureka/
-    # fetch all 5 seconds the delta from the service registry
-    registry-fetch-interval-seconds: 5
-    # nur für Testing
-    registerWithEureka: false
-    fetchRegistry: false
 
 # zuul routes
 zuul:
@@ -34,13 +23,10 @@ zuul:
   routes:
     foos:
       path: /user_service/**
-      url: http://localhost:35197/
-#    tierverwaltung:
-#      path: /tierverwaltung/**
-#      serviceId: Tierverwaltung
+      url: http://localhost:8870/
+      sensitiveHeaders: 
+      add-proxy-headers: true
 
-
-#management.security.enabled: false      
       
 security:
   oauth2:
@@ -50,7 +36,9 @@ security:
       accessTokenUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
       userAuthorizationUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
     resource:
-       userInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo         
+       userInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo      
+       preferTokenInfo: false  
+  sessions: ALWAYS
        
        
 logging:
@@ -63,9 +51,3 @@ logging:
 spring:
     profiles: docker
     
-
-eureka.client:
-    # the hostname of your eureka server should be 'discovery'
-    serviceUrl.defaultZone: http://discovery:8761/eureka/
-    # fetch all 5 seconds the delta from the service registry
-    registry-fetch-interval-seconds: 5
