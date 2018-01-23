@@ -1,53 +1,13 @@
-# GLOBAL CONFIGURATION
+server.port: 8083
+
 spring:
-    # if you want to set a different profile
-    # use environment variable:
-    #
-    # SPRING_PROFILES_ACTIVE=docker
-    profiles.active: local
-    application.name: Zuul
-
-# zuul proxy exposes 8082
-server.port: 8082
-
-
----
-# LOCAL CONFIGURATION
-spring:
-    profiles: local
-      
-
-# zuul routes
-zuul:
-  ignoredServices: '*'
-  routes:
-    foos:
-      path: /user_service/**
-      url: http://localhost:8870/
-      sensitiveHeaders: 
-      add-proxy-headers: true
-
-      
-security:
-  oauth2:
-    client:
-      clientId: openIdDemo
-      clientSecret: a5396a8c-d074-4768-a7b3-f95e6d310f20
-      accessTokenUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
-      userAuthorizationUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
-    resource:
-       userInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo      
-       preferTokenInfo: false  
-  sessions: ALWAYS
-       
-       
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG      
-      
----
-# DOCKER CONFIGURATION
-spring:
-    profiles: docker
-    
+  cloud:
+    gateway:
+      routes:
+      # =====================================
+      - id: security_route
+        uri: http://localhost:8083/index.html
+        predicates:
+        - Path=/{segment}-view/**
+        filters:
+        - RewritePath=/(?<segment>.*)-view, /
