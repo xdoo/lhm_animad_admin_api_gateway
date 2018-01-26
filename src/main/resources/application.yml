@@ -21,9 +21,14 @@ spring:
 zuul:
   ignoredServices: '*'
   routes:
-    foos:
+    user:
       path: /user_service/**
       url: http://localhost:8870/
+      sensitiveHeaders: 
+      add-proxy-headers: true
+    admin:
+      path: /admin_service/**
+      url: http://localhost:39146/
       sensitiveHeaders: 
       add-proxy-headers: true
 
@@ -32,7 +37,7 @@ security:
   oauth2:
     client:
       clientId: openIdDemo
-      clientSecret: a5396a8c-d074-4768-a7b3-f95e6d310f20
+      clientSecret: b0c2bbe0-ba2f-454c-85ad-59a08cc09e6c
       accessTokenUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
       userAuthorizationUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
     resource:
