@@ -5,6 +5,8 @@
  */
 package de.muenchen.referenzarchitektur.apigateway;
 
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author roland
  */
 @RestController
+@Configuration
 public class RootController {
 
     /**
@@ -31,7 +34,7 @@ public class RootController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
+    @RequestMapping(method = RequestMethod.GET, value = "/api")
     public @ResponseBody
     ResponseEntity<RootLinksResource> getActions() {
         //these lines need to be generated...

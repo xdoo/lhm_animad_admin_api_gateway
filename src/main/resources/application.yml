@@ -10,13 +10,6 @@ spring:
 # zuul proxy exposes 8082
 server.port: 8082
 
-
----
-# LOCAL CONFIGURATION
-spring:
-    profiles: local
-      
-
 # zuul routes
 zuul:
   ignoredServices: '*'
@@ -31,6 +24,13 @@ zuul:
       url: http://localhost:39146/
       sensitiveHeaders: 
       add-proxy-headers: true
+
+---
+# LOCAL CONFIGURATION
+spring:
+    profiles: local
+      
+
 
       
 security:
@@ -55,4 +55,9 @@ logging:
 # DOCKER CONFIGURATION
 spring:
     profiles: docker
-    
+---
+spring:
+    profiles: no-security
+    h2.console.enabled: true
+
+security.ignored: /**    
