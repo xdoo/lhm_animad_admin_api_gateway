@@ -37,11 +37,11 @@ security:
   oauth2:
     client:
       clientId: openIdDemo
-      clientSecret: 085a6d9e-d6f0-470f-b913-6760b4f7648c
-      accessTokenUri: http://localhost:4000/auth/realms/demo/protocol/openid-connect/token
-      userAuthorizationUri: http://localhost:4000/auth/realms/demo/protocol/openid-connect/auth
+      clientSecret: b0c2bbe0-ba2f-454c-85ad-59a08cc09e6c
+      accessTokenUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
+      userAuthorizationUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
     resource:
-       userInfoUri: http://localhost:4000/auth/realms/demo/protocol/openid-connect/userinfo      
+       userInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo      
        preferTokenInfo: false  
   sessions: ALWAYS
 
