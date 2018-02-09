@@ -40,9 +40,9 @@ public class RootController {
         //these lines need to be generated...
         //duplication to application.yml --> can this be somehow be avoided?        
         Link userServiceLink = linkTo(RootController.class)
-                .slash("user_service").withRel("user_service");
+                .slash("api").slash("user_service").withRel("user_service");
         Link adminServiceLink = linkTo(RootController.class)
-                .slash("admin_service").withRel("admin_service");
+                .slash("api").slash("admin_service").withRel("admin_service");
 
         RootLinksResource links = new RootLinksResource();
         links.add(userServiceLink);
