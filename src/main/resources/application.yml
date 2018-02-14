@@ -15,14 +15,14 @@ zuul:
   ignoredServices: '*'
   routes:
     user:
-      path: /user_service/**
+      path: /api/user_service/**
       url: http://localhost:8870/
-      sensitiveHeaders: 
+#      sensitiveHeaders: 
       add-proxy-headers: true
     admin:
-      path: /admin_service/**
+      path: /api/admin_service/**
       url: http://localhost:39146/
-      sensitiveHeaders: 
+#      sensitiveHeaders: 
       add-proxy-headers: true
 
 ---
