@@ -5,7 +5,6 @@
  */
 package de.muenchen.referenzarchitektur.apigateway;
 
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
