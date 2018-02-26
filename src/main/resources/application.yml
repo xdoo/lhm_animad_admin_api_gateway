@@ -37,12 +37,12 @@ security:
   oauth2:
     client:
       clientId: openIdDemo
-      clientSecret: b0c2bbe0-ba2f-454c-85ad-59a08cc09e6c
+      clientSecret: f33048d1-82be-42de-81d9-71356ab8b19d
       accessTokenUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
       userAuthorizationUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
     resource:
       jwt:
-        key-value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqjrVO6S3X8U79FSJgY/zKBvEe+YOYAVRnjeaZLaFs66Amglf1RLp1G2ZANCtEV35uPOWi3ErkQDvGEOn0BNlgxYFI6iPO2co6RnPIRNEIhp7uvw9mxevXmIcRfv0/bulus81ET7H/POYqYpr7zXaN1EQU5nhjsSF39AHC5Xp49Fve8fihtWu63JOd/WnlkxJ+esxl+q+Wx1wBKdY8eaIxrKs3REZV0wxrSq7qwBEgAJ5HAojz3SO/A6s4K/J0Fm1WCxsnkm9LJ+gtnfDltYoJDbZafQyifT45oHz0pApIScqbsvgriOjQxSrQ7XzUx9btMxoKdPHrjlTukGweInqlQIDAQAB
+        key-value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlsteeVtC+LlM/uhuusceFDvKbeCPolBEpq+rNnRbBvSPDCdKGcIIpjrQswX/58loE/bQ45A5IY1Tlm1MWbGxZ0IZhYaILeTNySTK3aRsV94OpN+ib/PGWkP1aQZ6wdm4//C6whOhCbulbLwSTyjByD72FGdaO/OhrATD9OAEcP0QmrvjLRHQBA80lxB4fRCyIrea9aL/AuvBsAbTz1Ub70rH8ydwaPtev7/L4dY+9NaqoL23pLIYyV7k3cuPeyHU/lt4I68R4rNiFv08zQFWGMr+li13cWNi9KsNfP5h6Ce7h+D2WmOUv7Tm9b8rAJ4jGHuf8ylHWt0SQxBtofuldwIDAQAB
        
   sessions: ALWAYS
 
