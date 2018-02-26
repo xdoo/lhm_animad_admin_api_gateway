@@ -8,7 +8,7 @@ spring:
     application.name: Zuul
 
 # zuul proxy exposes 8082
-server.port: 8082
+server.port: 8080
 
 # zuul routes
 zuul:
