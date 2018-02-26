@@ -16,12 +16,12 @@ zuul:
   routes:
     user:
       path: /api/user_service/**
-      url: http://localhost:8870/
+      url: http://user-service:8080/
 #      sensitiveHeaders: 
       add-proxy-headers: true
     admin:
       path: /api/admin_service/**
-      url: http://localhost:39146/
+      url: http://admin-service:8080/
 #      sensitiveHeaders: 
       add-proxy-headers: true
 
