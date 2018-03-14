@@ -48,9 +48,9 @@
 
         
         <dependency>
-            <groupId>de.muenchen.referenzarchitektur</groupId>
-            <artifactId>lhm_animad_admin_html5</artifactId>
-            <version>${project.version}</version>
+            <groupId>de.muenchen.animad.admin</groupId>
+            <artifactId>animad-gui-keeperinterface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
             <scope>runtime</scope>
         </dependency>   
         

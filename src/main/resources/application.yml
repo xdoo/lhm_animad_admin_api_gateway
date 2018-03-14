@@ -25,7 +25,7 @@ zuul:
 #      sensitiveHeaders: 
       add-proxy-headers: true
     admin:
-      path: /api/admin_service/**
+      path: /api/animad-service-administration/**
       url: http://localhost:39146/
 #      sensitiveHeaders: 
       add-proxy-headers: true
@@ -63,9 +63,6 @@ spring:
 
 security.ignored: /**    
 
-server.port: 8082
-
-
       
 ---
 # OPENSHIFT CONFIGURATION
@@ -87,7 +84,7 @@ zuul:
 #      sensitiveHeaders: 
       add-proxy-headers: true
     admin:
-      path: /api/admin_service/**
+      path: /api/animad-service-administration/**
       url: http://admin-service:8080/
 #      sensitiveHeaders: 
       add-proxy-headers: true 
