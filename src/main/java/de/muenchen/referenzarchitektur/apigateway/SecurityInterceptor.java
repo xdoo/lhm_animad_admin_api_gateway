@@ -23,6 +23,21 @@ import org.springframework.security.oauth2.provider.authentication.OAuth2Authent
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Component;
 
+/**
+ * Wird verwendet, um auch im API-Gateway immer den aktuellen Access Token zu haben.
+ * Auf diese Weise wird auch bei reinen API-Gateway-Requests (z.B. beim Lazy-Loading von HTML-Fragmenten)
+ * immer überprüft, ob das aktuelle Access Token noch valide ist und falls nicht über den
+ * Refresh Token ein neues geholt.
+ * Bei den Backend-Zugriffe über Zuul wird zwar auch in der Klasse OAuth2TokenRelayFilter immer
+ * das Access Token überprüft und wenn nötig ein aktuelleres verwendet. Dort wird aber das Token
+ * im Frontend nicht ausgetauscht, so dass reine Frontend-Requests "unendlich" valide sind.
+ * Auch wenn unser Frontend weniger sicherheitstechnisch relevant ist, so sollten wir es 
+ * trotzdem entsprechend absichern und sicherstellen, dass sich der User neu anmeldet, wenn das 
+ * Refresh Token abläuft.
+ * Eigentlich sollte Spring OAuth2 das ja selbst machen, aber die Spring-Entwickler sind da anderer
+ * Ansicht: https://github.com/spring-projects/spring-security-oauth2-boot/issues/5
+ * @author roland
+ */
 @Component
 public class SecurityInterceptor extends HandlerInterceptorAdapter {
 

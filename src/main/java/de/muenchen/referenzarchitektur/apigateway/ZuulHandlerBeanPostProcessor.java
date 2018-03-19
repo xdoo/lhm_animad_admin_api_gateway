@@ -12,7 +12,11 @@ import org.springframework.cloud.netflix.zuul.web.ZuulHandlerMapping;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
+ * Wenn man will, dass der MVCInterceptor auch beim Aufruf der Zuul Routen angesteuert wird,
+ * braucht man diese Klasse (vgl. https://stackoverflow.com/questions/37553487/interceptor-not-getting-called-when-zuul-routes-configured-in-gateway).
+ * Werde ich aber abschalten, da der Zuul Gateway sich selbst darum kümmert, immer das aktuelle Security
+ * Token zu verwenden.
+ * 
  * @author roland
  */
 @Configuration
