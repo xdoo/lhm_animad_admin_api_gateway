@@ -19,6 +19,9 @@ import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConv
  * "azp". Deshalb gibt es nun einen angepassten AccessTokenConverter,
  * der die clientId von "azp" nach "client_id" konvertiert.
  * 
+ * Es gibt hierzu folgendes Issue bei Github: https://github.com/spring-cloud/spring-cloud-security/issues/140
+ * Falls Spring da etwas anpasst, kann man sich ggf. diese Klasse sparen.
+ * 
  * @author roland
  */
 public class CustomAccessTokenConverter extends DefaultAccessTokenConverter {
