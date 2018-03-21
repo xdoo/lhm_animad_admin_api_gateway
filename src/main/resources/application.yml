@@ -25,7 +25,7 @@ zuul:
 #      sensitiveHeaders: 
       add-proxy-headers: true
     admin:
-      path: /api/animad-service-administration/**
+      path: /api/animad-administration-service/**
       url: http://localhost:39146/
 #      sensitiveHeaders: 
       add-proxy-headers: true
